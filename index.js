@@ -30,17 +30,6 @@ module.exports = function supports () {
     encodings: manifest.encodings || false,
 
     // Methods that are not part of abstract-leveldown or levelup
-    additionalMethods: manifest.additionalMethods || {
-      // May look something like:
-      // approximateSize: {
-      //   sync: false,
-      //   callback: true,
-      //   promise: false
-      // },
-      // createWriteStream: {
-      //   sync: true,
-      //   writable: true
-      // }
-    }
+    additionalMethods: manifest.additionalMethods || {}
   })
 }

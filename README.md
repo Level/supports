@@ -161,7 +161,24 @@ _TBD: what this means for `*asBuffer` options._
 
 ### `additionalMethods` (object)
 
-Format TBD.
+In the form of:
+
+```js
+{
+  foo: true,
+  bar: true
+}
+```
+
+Which says the db has two methods, `foo` and `bar`, that are not part of the `abstract-leveldown` interface. It might be used like so:
+
+```js
+if (db.supports.additionalMethods.foo) {
+  db.foo()
+}
+```
+
+For future extensibility, the properties of `additionalMethods` should be taken as truthy rather than strictly typed booleans. We may add additional metadata (see [#1](https://github.com/Level/supports/issues/1)).
 
 ## Install
 
