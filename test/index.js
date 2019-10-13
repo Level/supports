@@ -2,6 +2,7 @@
 
 var xtend = require('xtend')
 var shape = require('./shape')
+var cloneable = require('./cloneable')
 
 module.exports = function suite (test, testCommon) {
   test('db has manifest', function (t) {
@@ -9,6 +10,7 @@ module.exports = function suite (test, testCommon) {
     var manifest = db.supports
 
     shape(t, manifest)
+    cloneable(t, manifest)
 
     var before = xtend(manifest, {
       additionalMethods: xtend(manifest.additionalMethods)

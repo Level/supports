@@ -30,6 +30,6 @@ module.exports = function supports () {
     encodings: manifest.encodings || false,
 
     // Methods that are not part of abstract-leveldown or levelup
-    additionalMethods: manifest.additionalMethods || {}
+    additionalMethods: xtend(manifest.additionalMethods)
   })
 }
