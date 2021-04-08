@@ -1,12 +1,12 @@
 'use strict'
 
-var hasOwnProperty = Object.prototype.hasOwnProperty
+const hasOwnProperty = Object.prototype.hasOwnProperty
 
 module.exports = function shape (t, manifest) {
   t.ok(isObject(manifest), 'manifest is object')
   t.ok(isObject(manifest.additionalMethods), 'additionalMethods is object')
 
-  for (var k in manifest) {
+  for (const k in manifest) {
     if (!hasOwnProperty.call(manifest, k)) continue
 
     if (manifest[k]) {

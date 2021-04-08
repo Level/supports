@@ -1,13 +1,9 @@
 'use strict'
 
-// For (old) browser support
-var xtend = require('xtend')
-var assign = require('xtend/mutable')
+module.exports = function supports (...manifests) {
+  const manifest = manifests.reduce((acc, m) => Object.assign(acc, m), {})
 
-module.exports = function supports () {
-  var manifest = xtend.apply(null, arguments)
-
-  return assign(manifest, {
+  return Object.assign(manifest, {
     // Features of abstract-leveldown
     bufferKeys: manifest.bufferKeys || false,
     snapshots: manifest.snapshots || false,
@@ -30,6 +26,6 @@ module.exports = function supports () {
     encodings: manifest.encodings || false,
 
     // Methods that are not part of abstract-leveldown or levelup
-    additionalMethods: xtend(manifest.additionalMethods)
+    additionalMethods: Object.assign({}, manifest.additionalMethods)
   })
 }

@@ -1,9 +1,9 @@
 'use strict'
 
-var test = require('tape')
-var supports = require('..')
-var shape = require('./shape')
-var cloneable = require('./cloneable')
+const test = require('tape')
+const supports = require('..')
+const shape = require('./shape')
+const cloneable = require('./cloneable')
 
 test('no options', function (t) {
   shape(t, supports())
@@ -13,7 +13,7 @@ test('no options', function (t) {
 
 test('falsy options', function (t) {
   ;[null, false, undefined, 0, ''].forEach(function (value) {
-    var manifest = supports({
+    const manifest = supports({
       bufferKeys: value,
       additionalMethods: {
         foo: value
@@ -29,7 +29,7 @@ test('falsy options', function (t) {
 
 test('truthy options', function (t) {
   ;[true, {}, 'yes', 1, []].forEach(function (value) {
-    var manifest = supports({
+    const manifest = supports({
       streams: value,
       additionalMethods: {
         foo: value
@@ -45,9 +45,9 @@ test('truthy options', function (t) {
 })
 
 test('merges input objects without mutating them', function (t) {
-  var input1 = { bufferKeys: null, streams: false }
-  var input2 = { streams: true, additionalMethods: {} }
-  var manifest = supports(input1, input2)
+  const input1 = { bufferKeys: null, streams: false }
+  const input2 = { streams: true, additionalMethods: {} }
+  const manifest = supports(input1, input2)
 
   manifest.foobar = true
   manifest.additionalMethods.baz = true
@@ -61,15 +61,15 @@ test('merges input objects without mutating them', function (t) {
 })
 
 test('inherits additionalMethods', function (t) {
-  var manifest = supports({ additionalMethods: { foo: true } }, {})
+  const manifest = supports({ additionalMethods: { foo: true } }, {})
   t.same(manifest.additionalMethods, { foo: true })
   t.end()
 })
 
 test('does not merge additionalMethods', function (t) {
-  var input1 = { additionalMethods: { foo: true } }
-  var input2 = { additionalMethods: { bar: true } }
-  var manifest = supports(input1, input2)
+  const input1 = { additionalMethods: { foo: true } }
+  const input2 = { additionalMethods: { bar: true } }
+  const manifest = supports(input1, input2)
   t.same(manifest.additionalMethods, { bar: true })
   t.end()
 })

@@ -1,19 +1,18 @@
 'use strict'
 
-var xtend = require('xtend')
-var shape = require('./shape')
-var cloneable = require('./cloneable')
+const shape = require('./shape')
+const cloneable = require('./cloneable')
 
 module.exports = function suite (test, testCommon) {
   test('db has manifest', function (t) {
-    var db = testCommon.factory()
-    var manifest = db.supports
+    const db = testCommon.factory()
+    const manifest = db.supports
 
     shape(t, manifest)
     cloneable(t, manifest)
 
-    var before = xtend(manifest, {
-      additionalMethods: xtend(manifest.additionalMethods)
+    const before = Object.assign({}, manifest, {
+      additionalMethods: Object.assign({}, manifest.additionalMethods)
     })
 
     db.open(function (err) {

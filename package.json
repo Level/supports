@@ -5,11 +5,9 @@
   "license": "MIT",
   "scripts": {
     "test": "standard && hallmark && (nyc -s node test/self.js | faucet) && nyc report",
-    "test-browser-local": "airtap --coverage --local test/self.js",
+    "test-browsers-local": "airtap --coverage test/self.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "hallmark": "hallmark --fix",
-    "dependency-check": "dependency-check --no-dev . test/*.js",
-    "prepublishOnly": "npm run dependency-check"
+    "hallmark": "hallmark --fix"
   },
   "files": [
     "test",
@@ -17,18 +15,16 @@
     "CONTRIBUTORS.md",
     "index.js"
   ],
-  "dependencies": {
-    "xtend": "^4.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "airtap": "^3.0.0",
+    "airtap": "^4.0.3",
+    "airtap-playwright": "^1.0.1",
     "coveralls": "^3.0.6",
-    "dependency-check": "^4.1.0",
     "faucet": "^0.0.1",
     "hallmark": "^3.1.0",
     "level-community": "^3.0.0",
     "nyc": "^14.1.1",
-    "standard": "^14.3.1",
+    "standard": "^16.0.3",
     "tape": "^5.0.1"
   },
   "hallmark": {
@@ -48,6 +44,6 @@
     "manifest"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=10"
   }
 }

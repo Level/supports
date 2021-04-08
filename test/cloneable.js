@@ -1,13 +1,13 @@
 'use strict'
 
-var supports = require('..')
+const supports = require('..')
 
 // Every object in a manifest must have a unique identity, to avoid accidental
 // mutation. In supports() we only shallowly clone the manifest object itself
 // and additionalMethods. If in the future we add more objects to manifests,
 // this test will break and we'll know to start performing a deep clone.
 module.exports = function cloneable (t, manifest) {
-  var copy = supports(manifest)
+  const copy = supports(manifest)
   verifyUnique(t, 'manifest', manifest, copy)
 }
 
