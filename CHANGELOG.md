@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.1] - 2021-09-24
+
+### Added
+
+- Add features: `getMany`, `keyIterator`, `valueIterator`, `iteratorNextv`, `iteratorAll` ([#11](https://github.com/Level/supports/issues/11)) ([`b44a410`](https://github.com/Level/supports/commit/b44a410)) (Vincent Weevers)
+
 ## [2.0.0] - 2021-04-09
 
 ### Changed
@@ -16,10 +22,14 @@
 
 - Clone `additionalMethods` to prevent mutation ([#4](https://github.com/Level/supports/issues/4)) ([**@vweevers**](https://github.com/vweevers))
 
-## 1.0.0 - 2019-09-22
+## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[2.0.1]: https://github.com/Level/supports/compare/v2.0.0...v2.0.1
 
 [2.0.0]: https://github.com/Level/supports/compare/v1.0.1...v2.0.0
 
 [1.0.1]: https://github.com/Level/supports/compare/v1.0.0...v1.0.1
+
+[1.0.0]: https://github.com/Level/supports/releases/tag/v1.0.0
