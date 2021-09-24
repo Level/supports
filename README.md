@@ -74,6 +74,29 @@ if (db.supports.streams === true)
 
 Does the db support [Buffer](https://nodejs.org/api/buffer.html) keys? May depend on runtime environment as well. Does _not_ include support of other binary types like typed arrays (which is why this is called `bufferKeys` rather than `binaryKeys`).
 
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Support |
+| :------------------- | :------ |
+| `abstract-leveldown` | ✅       |
+| `leveldown`          | ✅       |
+| `rocksdb`            | ✅       |
+| `memdown`            | ✅       |
+| `level-js`           | ✅       |
+| `encoding-down`      | ✅       |
+| `deferred-leveldown` | ✅       |
+| `levelup`            | ✅       |
+| `level-packager`     | ✅       |
+| `level`              | ✅       |
+| `level-mem`          | ✅       |
+| `level-rocksdb`      | ✅       |
+| `subleveldown`       | ✅       |
+| `multileveldown`     | ✅       |
+| `level-party`        | ✅       |
+
+</details>
+
 ### `snapshots` (boolean)
 
 Does the db have snapshot guarantees (meaning that reads are unaffected by simultaneous writes)? Must be `false` if any of the following is true:
@@ -81,17 +104,88 @@ Does the db have snapshot guarantees (meaning that reads are unaffected by simul
 - Reads don't operate on a [snapshot](https://github.com/Level/abstract-leveldown#iterator)
 - Snapshots are created asynchronously.
 
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Snapshot guarantee          |
+| :------------------- | :-------------------------- |
+| `abstract-leveldown` | ✅                           |
+| `leveldown`          | ✅                           |
+| `rocksdb`            | ✅                           |
+| `memdown`            | ✅                           |
+| `level-js`           | ✅ (by buffering)            |
+| `encoding-down`      | ✅                           |
+| `deferred-leveldown` | ✅                           |
+| `levelup`            | ✅                           |
+| `level-packager`     | ✅                           |
+| `level`              | ✅                           |
+| `level-mem`          | ✅                           |
+| `level-rocksdb`      | ✅                           |
+| `subleveldown`       | ✅                           |
+| `multileveldown`     | ✅ (unless `retry` is true)  |
+| `level-party`        | ❌ (unless `retry` is false) |
+
+</details>
+
 ### `permanence` (boolean)
 
 Does data survive after process exit? Is `false` for e.g. [`memdown`](https://github.com/Level/memdown), typically `true`.
 
 ### `seek` (boolean)
 
-Does `db.iterator()` support [`seek(..)`](https://github.com/Level/abstract-leveldown/#iteratorseektarget)?
+Do iterators support [`seek(..)`](https://github.com/Level/abstract-leveldown/#iteratorseektarget)?
+
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Support        |
+| :------------------- | :------------- |
+| `abstract-leveldown` | ✅ 6.0.0        |
+| `leveldown`          | ✅ 1.2.0        |
+| `rocksdb`            | ✅ 1.0.0        |
+| `memdown`            | ✅ 4.1.0        |
+| `level-js`           | ❌              |
+| `encoding-down`      | ✅ 6.1.0        |
+| `deferred-leveldown` | ✅ 5.1.0        |
+| `levelup`            | ✅ n/a          |
+| `level-packager`     | ✅ n/a          |
+| `level`              | ❌ (`level-js`) |
+| `level-mem`          | ✅ 4.0.0        |
+| `level-rocksdb`      | ✅ 1.0.0        |
+| `subleveldown`       | ✅ 4.1.0        |
+| `multileveldown`     | ❌              |
+| `level-party`        | ❌              |
+
+</details>
 
 #### `clear` (boolean)
 
-Does db support [`db.clear(..)`](https://github.com/Level/abstract-leveldown/#dbclearoptions-callback)? For an overview, see [Level/community#79](https://github.com/Level/community/issues/79).
+Does db support [`db.clear(..)`](https://github.com/Level/abstract-leveldown/#dbclearoptions-callback)?
+
+<details>
+<summary>Support matrix</summary>
+
+See also [Level/community#79](https://github.com/Level/community/issues/79).
+
+| Module               | Support | Optimized       |
+| :------------------- | :------ | :-------------- |
+| `abstract-leveldown` | ✅ 6.1.0 | n/a             |
+| `leveldown`          | ✅ 5.2.0 | ❌               |
+| `rocksdb`            | ✅ 4.1.0 | ❌               |
+| `memdown`            | ✅ 5.0.0 | ❌               |
+| `level-js`           | ✅ 5.0.0 | ✅ 5.0.0         |
+| `encoding-down`      | ✅ 6.2.0 | n/a             |
+| `deferred-leveldown` | ✅ 5.2.0 | n/a             |
+| `levelup`            | ✅ 4.2.0 | n/a             |
+| `level-packager`     | ✅ 5.0.3 | n/a             |
+| `level`              | ✅ 6.0.0 | ❌ (`leveldown`) |
+| `level-mem`          | ✅ 5.0.1 | ❌ (`memdown`)   |
+| `level-rocksdb`      | ✅ 5.0.0 | ❌ (`rocksdb`)   |
+| `subleveldown`       | ✅ 4.2.1 | n/a             |
+| `multileveldown`     | ❌       | n/a             |
+| `level-party`        | ❌       | n/a             |
+
+</details>
 
 ### `status` (boolean)
 
@@ -136,7 +230,19 @@ db.open(.., callback)
 
 ### `createIfMissing`, `errorIfExists` (boolean)
 
-Does `db.open(options, ..)` support these (`leveldown`) options?
+Does `db.open(options, ..)` support these options?
+
+<details>
+<summary>Support matrix</summary>
+
+| Module      | Support |
+| :---------- | :------ |
+| `leveldown` | ✅       |
+| `rocksdb`   | ✅       |
+| `memdown`   | ❌       |
+| `level-js`  | ❌       |
+
+</details>
 
 ### `promises` (boolean)
 
@@ -147,17 +253,114 @@ db.put('key', 'value', callback)
 await db.put('key', 'value')
 ```
 
-_Note: iterators are currently exonerated because they, at the time of writing, don't support promises anywhere._
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Support              |
+| :------------------- | :------------------- |
+| `abstract-leveldown` | ❌ (except iterators) |
+| `leveldown`          | ❌ (except iterators) |
+| `rocksdb`            | ❌ (except iterators) |
+| `memdown`            | ❌ (except iterators) |
+| `level-js`           | ❌ (except iterators) |
+| `encoding-down`      | ❌ (except iterators) |
+| `deferred-leveldown` | ❌ (except iterators) |
+| `levelup`            | ✅                    |
+| `level-packager`     | ✅                    |
+| `level`              | ✅                    |
+| `level-mem`          | ✅                    |
+| `level-rocksdb`      | ✅                    |
+| `subleveldown`       | ❌                    |
+| `multileveldown`     | ❌                    |
+| `level-party`        | ❌                    |
+
+</details>
 
 ### `streams` (boolean)
 
 Does db have the methods `createReadStream`, `createKeyStream` and `createValueStream`, following the API currently documented in `levelup`?
+
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Support |
+| :------------------- | :------ |
+| `abstract-leveldown` | ❌       |
+| `leveldown`          | ❌       |
+| `rocksdb`            | ❌       |
+| `memdown`            | ❌       |
+| `level-js`           | ❌       |
+| `encoding-down`      | ❌       |
+| `deferred-leveldown` | ❌       |
+| `levelup`            | ✅       |
+| `level-packager`     | ✅       |
+| `level`              | ✅       |
+| `level-mem`          | ✅       |
+| `level-rocksdb`      | ✅       |
+| `subleveldown`       | ✅       |
+| `multileveldown`     | ✅       |
+| `level-party`        | ✅       |
+
+</details>
 
 ### `encodings` (boolean)
 
 Do all relevant db methods take `keyEncoding` and `valueEncoding` options?
 
 _TBD: what this means for `*asBuffer` options._
+
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Support |
+| :------------------- | :------ |
+| `abstract-leveldown` | ❌       |
+| `leveldown`          | ❌       |
+| `rocksdb`            | ❌       |
+| `memdown`            | ❌       |
+| `level-js`           | ❌       |
+| `encoding-down`      | ✅       |
+| `deferred-leveldown` | ❌       |
+| `levelup`            | ✅       |
+| `level-packager`     | ✅       |
+| `level`              | ✅       |
+| `level-mem`          | ✅       |
+| `level-rocksdb`      | ✅       |
+| `subleveldown`       | ✅       |
+| `multileveldown`     | ✅       |
+| `level-party`        | ✅       |
+
+</details>
+
+### `getMany` (boolean)
+
+Does the db have a `getMany(keys[, options][, callback])` method?
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `keyIterator` (boolean)
+
+Does the `db` have a `keys([options])` method that returns a key iterator? Also implies support of `iterator#mode`.
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `valueIterator` (boolean)
+
+Does the `db` have a `values([options])` method that returns a key iterator? Also implies support of `iterator#mode`.
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `iteratorNextv` (boolean)
+
+Do iterators have a `nextv(size[, options][, callback])` method?
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `iteratorAll` (boolean)
+
+Do iterators have a `all([options][, callback])` method?
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
 
 ### `additionalMethods` (object)
 

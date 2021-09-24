@@ -10,6 +10,11 @@ module.exports = function supports (...manifests) {
     permanence: manifest.permanence || false,
     seek: manifest.seek || false,
     clear: manifest.clear || false,
+    getMany: manifest.getMany || false,
+    keyIterator: manifest.keyIterator || false,
+    valueIterator: manifest.valueIterator || false,
+    iteratorNextv: manifest.iteratorNextv || false,
+    iteratorAll: manifest.iteratorAll || false,
 
     // Features of abstract-leveldown that levelup doesn't have
     status: manifest.status || false,
