@@ -133,7 +133,7 @@ Does data survive after process exit? Is `false` for e.g. [`memdown`](https://gi
 
 ### `seek` (boolean)
 
-Does `db.iterator()` support [`seek(..)`](https://github.com/Level/abstract-leveldown/#iteratorseektarget)?
+Do iterators support [`seek(..)`](https://github.com/Level/abstract-leveldown/#iteratorseektarget)?
 
 <details>
 <summary>Support matrix</summary>
@@ -331,6 +331,36 @@ _TBD: what this means for `*asBuffer` options._
 | `level-party`        | ✅       |
 
 </details>
+
+### `getMany` (boolean)
+
+Does the db have a `getMany(keys[, options][, callback])` method?
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `keyIterator` (boolean)
+
+Does the `db` have a `keys([options])` method that returns a key iterator? Also implies support of `iterator#mode`.
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `valueIterator` (boolean)
+
+Does the `db` have a `values([options])` method that returns a key iterator? Also implies support of `iterator#mode`.
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `iteratorNextv` (boolean)
+
+Do iterators have a `nextv(size[, options][, callback])` method?
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
+
+### `iteratorAll` (boolean)
+
+Do iterators have a `all([options][, callback])` method?
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
 
 ### `additionalMethods` (object)
 
