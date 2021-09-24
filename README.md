@@ -3,13 +3,13 @@
 > **Create a manifest describing the abilities of a [`levelup`](https://github.com/Level/levelup) or [`abstract-leveldown`](https://github.com/Level/abstract-leveldown) db.**
 
 [![level badge][level-badge]](https://github.com/Level/awesome)
-[![npm](https://img.shields.io/npm/v/level-supports.svg?label=&logo=npm)](https://www.npmjs.com/package/level-supports)
+[![npm](https://img.shields.io/npm/v/level-supports.svg)](https://www.npmjs.com/package/level-supports)
 [![Node version](https://img.shields.io/node/v/level-supports.svg)](https://www.npmjs.com/package/level-supports)
-[![Test](https://github.com/Level/supports/actions/workflows/test.yml/badge.svg)](https://github.com/Level/supports/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Level/supports/branch/master/graph/badge.svg)](https://codecov.io/gh/Level/supports)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg?color=orange)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg?color=orange)](#sponsors)
+[![Test](https://img.shields.io/github/workflow/status/Level/supports/Test?label=test)](https://github.com/Level/supports/actions/workflows/test.yml)
+[![Coverage](https://img.shields.io/codecov/c/github/Level/supports?label=&logo=codecov&logoColor=fff)](https://codecov.io/gh/Level/supports)
+[![Standard](https://img.shields.io/badge/standard-informational?logo=javascript&logoColor=fff)](https://standardjs.com)
+[![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
+[![Donate](https://img.shields.io/badge/donate-orange?logo=open-collective&logoColor=fff)](https://opencollective.com/level)
 
 ## Usage
 
@@ -401,18 +401,10 @@ See the [Contribution Guide](https://github.com/Level/community/blob/master/CONT
 
 ## Donate
 
-To sustain [`Level`](https://github.com/Level) and its activities, become a backer or sponsor on [Open Collective](https://opencollective.com/level). Your logo or avatar will be displayed on our 28+ [GitHub repositories](https://github.com/Level) and [npm](https://www.npmjs.com/) packages. 💖
-
-### Backers
-
-[![Open Collective backers](https://opencollective.com/level/backers.svg?width=890)](https://opencollective.com/level)
-
-### Sponsors
-
-[![Open Collective sponsors](https://opencollective.com/level/sponsors.svg?width=890)](https://opencollective.com/level)
+Support us with a monthly donation on [Open Collective](https://opencollective.com/level) and help us continue our work.
 
 ## License
 
-[MIT](LICENSE.md) © 2019-present [Contributors](CONTRIBUTORS.md).
+[MIT](LICENSE)
 
 [level-badge]: https://leveljs.org/img/badge.svg
