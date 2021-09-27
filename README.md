@@ -270,7 +270,7 @@ await db.put('key', 'value')
 | `level`              | ✅                    |
 | `level-mem`          | ✅                    |
 | `level-rocksdb`      | ✅                    |
-| `subleveldown`       | ❌                    |
+| `subleveldown`       | ✅                    |
 | `multileveldown`     | ❌                    |
 | `level-party`        | ❌                    |
 
