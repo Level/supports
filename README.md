@@ -167,23 +167,23 @@ Does db support [`db.clear(..)`](https://github.com/Level/abstract-leveldown/#db
 
 See also [Level/community#79](https://github.com/Level/community/issues/79).
 
-| Module               | Support | Optimized       |
-| :------------------- | :------ | :-------------- |
-| `abstract-leveldown` | ✅ 6.1.0 | n/a             |
-| `leveldown`          | ✅ 5.2.0 | ❌               |
-| `rocksdb`            | ✅ 4.1.0 | ❌               |
-| `memdown`            | ✅ 5.0.0 | ❌               |
-| `level-js`           | ✅ 5.0.0 | ✅ 5.0.0         |
-| `encoding-down`      | ✅ 6.2.0 | n/a             |
-| `deferred-leveldown` | ✅ 5.2.0 | n/a             |
-| `levelup`            | ✅ 4.2.0 | n/a             |
-| `level-packager`     | ✅ 5.0.3 | n/a             |
-| `level`              | ✅ 6.0.0 | ❌ (`leveldown`) |
-| `level-mem`          | ✅ 5.0.1 | ❌ (`memdown`)   |
-| `level-rocksdb`      | ✅ 5.0.0 | ❌ (`rocksdb`)   |
-| `subleveldown`       | ✅ 4.2.1 | n/a             |
-| `multileveldown`     | ❌       | n/a             |
-| `level-party`        | ❌       | n/a             |
+| Module               | Support | Optimized     |
+| :------------------- | :------ | :------------ |
+| `abstract-leveldown` | ✅ 6.1.0 | n/a           |
+| `leveldown`          | ✅ 5.2.0 | ✅ 6.0.3       |
+| `rocksdb`            | ✅ 4.1.0 | ❌             |
+| `memdown`            | ✅ 5.0.0 | ❌             |
+| `level-js`           | ✅ 5.0.0 | ✅ 5.0.0       |
+| `encoding-down`      | ✅ 6.2.0 | n/a           |
+| `deferred-leveldown` | ✅ 5.2.0 | n/a           |
+| `levelup`            | ✅ 4.2.0 | n/a           |
+| `level-packager`     | ✅ 5.0.3 | n/a           |
+| `level`              | ✅ 6.0.0 | ✅ (floating)  |
+| `level-mem`          | ✅ 5.0.1 | ❌ (`memdown`) |
+| `level-rocksdb`      | ✅ 5.0.0 | ❌ (`rocksdb`) |
+| `subleveldown`       | ✅ 4.2.1 | ✅ 4.2.1       |
+| `multileveldown`     | ✅ 5.0.0 | ✅ 5.0.0       |
+| `level-party`        | ✅ 5.1.0 | ✅ 5.1.0       |
 
 </details>
 
@@ -271,8 +271,8 @@ await db.put('key', 'value')
 | `level-mem`          | ✅                    |
 | `level-rocksdb`      | ✅                    |
 | `subleveldown`       | ✅                    |
-| `multileveldown`     | ❌                    |
-| `level-party`        | ❌                    |
+| `multileveldown`     | ✅                    |
+| `level-party`        | ✅                    |
 
 </details>
 
@@ -334,9 +334,29 @@ _TBD: what this means for `*asBuffer` options._
 
 ### `getMany` (boolean)
 
-Does the db have a `getMany(keys[, options][, callback])` method?
+Does the db have a `getMany(keys[, options][, callback])` method, as documented in `abstract-leveldown`?
 
-_At the time of writing this is a new feature, subject to change, zero modules support it._
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Support                 |
+| :------------------- | :---------------------- |
+| `abstract-leveldown` | ✅ 7.2.0                 |
+| `leveldown`          | ✅ 6.1.0                 |
+| `rocksdb`            | ❌                       |
+| `memdown`            | ✅                       |
+| `level-js`           | ✅ 6.1.0                 |
+| `encoding-down`      | ✅ 7.1.0                 |
+| `deferred-leveldown` | ✅ 7.0.0                 |
+| `levelup`            | ✅ 5.1.0                 |
+| `level`              | ✅ (floating)            |
+| `level-mem`          | ❌ (outdated dependency) |
+| `level-rocksdb`      | ❌ (`rocksdb`)           |
+| `subleveldown`       | ✅ 6.0.0                 |
+| `multileveldown`     | ✅ 5.0.0                 |
+| `level-party`        | ✅ 5.1.0                 |
+
+</details>
 
 ### `keyIterator` (boolean)
 
