@@ -349,7 +349,7 @@ Does the db have a `getMany(keys[, options][, callback])` method, as documented 
 | `encoding-down`      | ✅ 7.1.0       |
 | `deferred-leveldown` | ✅ 7.0.0       |
 | `levelup`            | ✅ 5.1.0       |
-| `level`              | ✅ (floating)  |
+| `level`              | ✅ 7.0.1       |
 | `level-mem`          | ✅ 6.0.1       |
 | `level-rocksdb`      | ❌ (`rocksdb`) |
 | `subleveldown`       | ✅ 6.0.0       |
