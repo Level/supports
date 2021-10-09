@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.2] - 2021-10-09
+
+### Added
+
+- Add `idempotentOpen` and `passiveOpen` features ([`fc3f1e0`](https://github.com/Level/supports/commit/fc3f1e0)) (Vincent Weevers)
+- Add `events` feature ([`22a3837`](https://github.com/Level/supports/commit/22a3837)) (Vincent Weevers)
+- Document that `encodings` implies utf8 default ([`d1b6d89`](https://github.com/Level/supports/commit/d1b6d89)) (Vincent Weevers)
+- Document `status` values ([`0837a16`](https://github.com/Level/supports/commit/0837a16)) (Vincent Weevers)
+
+### Fixed
+
+- Update support matrices ([`eb92d8b`](https://github.com/Level/supports/commit/eb92d8b), [`ef14920`](https://github.com/Level/supports/commit/ef14920), [`0681a1e`](https://github.com/Level/supports/commit/0681a1e), [`ca2a0e6`](https://github.com/Level/supports/commit/ca2a0e6)) (Vincent Weevers)
+
 ## [2.0.1] - 2021-09-24
 
 ### Added
@@ -26,10 +39,12 @@
 
 :seedling: Initial release.
 
-[2.0.1]: https://github.com/Level/supports/compare/v2.0.0...v2.0.1
+[2.0.2]: https://github.com/Level/supports/releases/tag/v2.0.2
 
-[2.0.0]: https://github.com/Level/supports/compare/v1.0.1...v2.0.0
+[2.0.1]: https://github.com/Level/supports/releases/tag/v2.0.1
 
-[1.0.1]: https://github.com/Level/supports/compare/v1.0.0...v1.0.1
+[2.0.0]: https://github.com/Level/supports/releases/tag/v2.0.0
+
+[1.0.1]: https://github.com/Level/supports/releases/tag/v1.0.1
 
 [1.0.0]: https://github.com/Level/supports/releases/tag/v1.0.0
