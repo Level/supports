@@ -189,7 +189,15 @@ See also [Level/community#79](https://github.com/Level/community/issues/79).
 
 ### `status` (boolean)
 
-Does db have a [`status`](https://github.com/Level/abstract-leveldown/#dbstatus) property? Currently available on `abstract-leveldown` implementations, but not `levelup`.
+Does db have a [`status`](https://github.com/Level/abstract-leveldown/#dbstatus) property? That returns a string value that is one of:
+
+- `new` - newly created, not opened or closed
+- `opening` - waiting for the store to be opened
+- `open` - successfully opened the store
+- `closing` - waiting for the store to be closed
+- `closed` - store has been successfully closed.
+
+The `new` status should be avoided. It is being phased out in favor of an initial status of `closed`.
 
 ### `deferredOpen` (boolean)
 
