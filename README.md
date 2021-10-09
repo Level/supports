@@ -313,9 +313,7 @@ Does db have the methods `createReadStream`, `createKeyStream` and `createValueS
 
 ### `encodings` (boolean)
 
-Do all relevant db methods take `keyEncoding` and `valueEncoding` options?
-
-_TBD: what this means for `*asBuffer` options._
+Do all relevant db methods take `keyEncoding` and `valueEncoding` options? If true, the db must use a default encoding of utf8 and all its operations must return strings rather than buffers by default.
 
 <details>
 <summary>Support matrix</summary>
