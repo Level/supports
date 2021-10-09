@@ -284,6 +284,16 @@ await db.put('key', 'value')
 
 </details>
 
+### `events` (boolean or object)
+
+Is db an event emitter, as indicated by a truthy value? And does it support specific events as indicated by nested properties?
+
+```js
+if (db.supports.events && db.supports.events.open) {
+  db.once('open', () => { /* .. */})
+}
+```
+
 ### `streams` (boolean)
 
 Does db have the methods `createReadStream`, `createKeyStream` and `createValueStream`, following the API currently documented in `levelup`?

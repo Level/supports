@@ -29,8 +29,13 @@ module.exports = function supports (...manifests) {
     promises: manifest.promises || false,
     streams: manifest.streams || false,
     encodings: manifest.encodings || false,
+    events: maybeObject(manifest.events),
 
     // Methods that are not part of abstract-leveldown or levelup
     additionalMethods: Object.assign({}, manifest.additionalMethods)
   })
+}
+
+function maybeObject (value) {
+  return !value ? false : Object.assign({}, value)
 }
