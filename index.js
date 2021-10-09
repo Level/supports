@@ -18,6 +18,9 @@ module.exports = function supports (...manifests) {
 
     // Features of abstract-leveldown that levelup doesn't have
     status: manifest.status || false,
+    idempotentOpen: manifest.idempotentOpen || false,
+    passiveOpen: manifest.passiveOpen || false,
+    serialize: manifest.serialize || false,
 
     // Features of disk-based implementations
     createIfMissing: manifest.createIfMissing || false,

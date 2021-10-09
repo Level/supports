@@ -219,7 +219,39 @@ db.open(function (err) {
 })
 ```
 
-_TBD: whether this also includes methods like `isOpen()` and `isClosed()`._
+### `idempotentOpen` (boolean)
+
+Are `db.open()` and `db.close()` idempotent and safe, such that:
+
+1. Calling `open()` or `close()` twice has the same effect as calling it once
+2. If both `open()` and `close()` are called in succession while a previous call has not yet completed, the last call dictates the final `status` and all earlier calls yield an error if they oppose the final `status`.
+3. Callbacks are called in the order that the `open()` or `close()` calls were made.
+4. Callbacks are not called until any pending state changes are done, meaning that `status` is not (or no longer) 'opening' or 'closing'.
+5. If events are supported, they are emitted before callbacks are called, because event listeners may result in additional pending state changes.
+6. If events are supported, the 'open' and 'closed' events are not emitted if there are pending state changes or if the initial `status` matches the final `status`. They communicate a changed final `status` even though the (underlying) db may open and close multiple times before that. This avoids emitting (for example) an 'open' event while `status` is 'closing'.
+
+For example:
+
+1. In a sequence of calls like `open(); close(); open()` the final `status` will be 'open', the second call will receive an error, an 'open' event is emitted once, no 'closed' event is emitted, and all callbacks will see that `status` is 'open'. That is unless `open()` failed.
+2. If `open()` failed twice in the same sequence of calls, the final status will be 'closed', the first and last call receive an error, no events are emitted, and all callbacks will see that `status` is 'closed'.
+
+_At the time of writing this is a new feature, subject to change, zero modules support it (including `levelup`)._
+
+### `passiveOpen` (boolean)
+
+Does db support `db.open({ passive: true })` which waits for but does not initiate opening? To the same but more comprehensive effect as :
+
+```js
+if (db.status === 'opening') {
+  db.once('open', callback)
+} else if (db.status === 'open') {
+  queueMicrotask(callback)
+} else {
+  // Yield error
+}
+```
+
+_At the time of writing this is a new feature, subject to change, zero modules support it._
 
 ### `openCallback` (boolean)
 
