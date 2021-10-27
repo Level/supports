@@ -31,7 +31,7 @@ module.exports = function supports (...manifests) {
     openCallback: manifest.openCallback || false,
     promises: manifest.promises || false,
     streams: manifest.streams || false,
-    encodings: manifest.encodings || false,
+    encodings: maybeObject(manifest.encodings),
     events: maybeObject(manifest.events),
 
     // Methods that are not part of abstract-leveldown or levelup

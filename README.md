@@ -353,9 +353,19 @@ Does db have the methods `createReadStream`, `createKeyStream` and `createValueS
 
 </details>
 
-### `encodings` (boolean)
+### `encodings` (boolean or object)
 
-Do all relevant db methods take `keyEncoding` and `valueEncoding` options? If true, the db must use a default encoding of utf8 and all its operations must return strings rather than buffers by default.
+Do all relevant db methods take `keyEncoding` and `valueEncoding` options? If truthy, the db must use a default encoding of utf8 and all its operations must return strings rather than buffers by default.
+
+Support of individual encodings may also be indicated by adding their names as nested properties. For example:
+
+```js
+{
+  encodings: {
+    utf8: true
+  }
+}
+```
 
 <details>
 <summary>Support matrix</summary>
