@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0] - 2021-10-27
+
+### Changed
+
+- Allow `manifest.encodings` to be an object ([`284e0db`](https://github.com/Level/supports/commit/284e0db)) (Vincent Weevers)
+
 ## [2.0.2] - 2021-10-09
 
 ### Added
@@ -38,6 +44,8 @@
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[2.1.0]: https://github.com/Level/supports/releases/tag/v2.1.0
 
 [2.0.2]: https://github.com/Level/supports/releases/tag/v2.0.2
 
