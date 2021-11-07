@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.0.0] - 2021-11-07
+
+_No longer compatible with `abstract-leveldown` or its dependents._
+
+### Changed
+
+- **Breaking:** change `encodings` and `events` to always be objects ([`eb819a6`](https://github.com/Level/supports/commit/eb819a6)) (Vincent Weevers)
+- **Breaking:** replace default export with named export ([`7e9e467`](https://github.com/Level/supports/commit/7e9e467)) (Vincent Weevers)
+
+### Added
+
+- Add typings ([`3df48fc`](https://github.com/Level/supports/commit/3df48fc)) (Vincent Weevers).
+
 ## [2.1.0] - 2021-10-27
 
 ### Changed
@@ -44,6 +57,8 @@
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[3.0.0]: https://github.com/Level/supports/releases/tag/v3.0.0
 
 [2.1.0]: https://github.com/Level/supports/releases/tag/v2.1.0
 
