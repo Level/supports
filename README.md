@@ -316,13 +316,13 @@ await db.put('key', 'value')
 
 </details>
 
-### `events` (boolean or object)
+### `events` (object)
 
-Is db an event emitter, as indicated by a truthy value? And does it support specific events as indicated by nested properties?
+Which events does the database emit, as indicated by nested properties? For example:
 
 ```js
-if (db.supports.events && db.supports.events.open) {
-  db.once('open', () => { /* .. */})
+if (db.supports.events.put) {
+  db.on('put', () => { /* .. */})
 }
 ```
 
@@ -353,22 +353,25 @@ Does db have the methods `createReadStream`, `createKeyStream` and `createValueS
 
 </details>
 
-### `encodings` (boolean or object)
+### `encodings` (object)
 
-Do all relevant db methods take `keyEncoding` and `valueEncoding` options? If truthy, the db must use a default encoding of utf8 and all its operations must return strings rather than buffers by default.
-
-Support of individual encodings may also be indicated by adding their names as nested properties. For example:
+Which encodings (by name) does the database support, as indicated by nested properties? For example:
 
 ```js
 {
   encodings: {
-    utf8: true
+    utf8: true,
+    json: true
   }
 }
 ```
 
+As the `encodings` property cannot be false (anymore, since `level-supports` v3.0.0) it implies that the database supports `keyEncoding` and `valueEncoding` options on all relevant methods, uses a default encoding of utf8 and that hence all of its read operations return strings rather than buffers by default.
+
 <details>
 <summary>Support matrix</summary>
+
+At the moment, this matrix just indicates general support of encodings, not that the listed modules support the `encodings` property exactly as described above.
 
 | Module               | Support |
 | :------------------- | :------ |
