@@ -4,24 +4,30 @@
   "description": "Create a manifest describing the abilities of a levelup or abstract-leveldown db",
   "license": "MIT",
   "scripts": {
-    "test": "standard && hallmark && (nyc -s node test/self.js | faucet) && nyc report",
+    "test": "ts-standard && tsc && standard && hallmark && (nyc -s node test/self.js | faucet) && nyc report",
     "test-browsers-local": "airtap --coverage test/self.js",
     "coverage": "nyc report -r lcovonly",
     "hallmark": "hallmark --fix"
   },
+  "types": "./index.d.ts",
   "files": [
     "test",
     "CHANGELOG.md",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@voxpelli/tsconfig": "^3.0.0",
     "airtap": "^4.0.3",
     "airtap-playwright": "^1.0.1",
     "faucet": "^0.0.1",
     "hallmark": "^3.1.0",
     "nyc": "^15.1.0",
     "standard": "^16.0.3",
-    "tape": "^5.0.1"
+    "tape": "^5.0.1",
+    "ts-standard": "^10.0.0",
+    "typescript": "^4.4.4"
   },
   "repository": {
     "type": "git",
