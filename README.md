@@ -14,7 +14,7 @@
 ## Usage
 
 ```js
-const supports = require('level-supports')
+const { supports } = require('level-supports')
 
 db.supports = supports({
   bufferKeys: true,

@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function supports (...manifests) {
+exports.supports = function supports (...manifests) {
   const manifest = manifests.reduce((acc, m) => Object.assign(acc, m), {})
 
   return Object.assign(manifest, {

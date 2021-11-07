@@ -1,7 +1,7 @@
 'use strict'
 
 const test = require('tape')
-const supports = require('..')
+const { supports } = require('..')
 const shape = require('./shape')
 const cloneable = require('./cloneable')
 

@@ -1,6 +1,6 @@
 'use strict'
 
-const supports = require('..')
+const { supports } = require('..')
 
 // Every object in a manifest must have a unique identity, to avoid accidental
 // mutation. In supports() we only shallowly clone the manifest object itself
