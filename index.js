@@ -4,7 +4,6 @@ exports.supports = function supports (...manifests) {
   const manifest = manifests.reduce((acc, m) => Object.assign(acc, m), {})
 
   return Object.assign(manifest, {
-    bufferKeys: manifest.bufferKeys || false,
     snapshots: manifest.snapshots || false,
     permanence: manifest.permanence || false,
     seek: manifest.seek || false,
@@ -15,13 +14,9 @@ exports.supports = function supports (...manifests) {
     iteratorNextv: manifest.iteratorNextv || false,
     iteratorAll: manifest.iteratorAll || false,
     status: manifest.status || false,
-    idempotentOpen: manifest.idempotentOpen || false,
-    passiveOpen: manifest.passiveOpen || false,
-    serialize: manifest.serialize || false,
     createIfMissing: manifest.createIfMissing || false,
     errorIfExists: manifest.errorIfExists || false,
     deferredOpen: manifest.deferredOpen || false,
-    openCallback: manifest.openCallback || false,
     promises: manifest.promises || false,
     streams: manifest.streams || false,
     encodings: Object.assign({}, manifest.encodings),

@@ -1,7 +1,7 @@
 {
   "name": "level-supports",
   "version": "3.0.0",
-  "description": "Create a manifest describing the abilities of a levelup or abstract-leveldown db",
+  "description": "Create a manifest describing the abilities of an abstract-level database",
   "license": "MIT",
   "scripts": {
     "test": "ts-standard && tsc && standard && hallmark && (nyc -s node test/self.js | faucet) && nyc report",

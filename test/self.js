@@ -14,14 +14,14 @@ test('no options', function (t) {
 test('falsy options', function (t) {
   ;[null, false, undefined, 0, ''].forEach(function (value) {
     const manifest = supports({
-      bufferKeys: value,
+      seek: value,
       additionalMethods: {
         foo: value
       }
     })
 
     shape(t, manifest)
-    t.is(manifest.bufferKeys, false)
+    t.is(manifest.seek, false)
   })
 
   t.end()
@@ -45,16 +45,16 @@ test('truthy options', function (t) {
 })
 
 test('merges input objects without mutating them', function (t) {
-  const input1 = { bufferKeys: null, streams: false }
+  const input1 = { seek: null, streams: false }
   const input2 = { streams: true, additionalMethods: {} }
   const manifest = supports(input1, input2)
 
   manifest.foobar = true
   manifest.additionalMethods.baz = true
 
-  t.same(input1, { bufferKeys: null, streams: false })
+  t.same(input1, { seek: null, streams: false })
   t.same(input2, { streams: true, additionalMethods: {} })
-  t.is(manifest.bufferKeys, false)
+  t.is(manifest.seek, false)
   t.is(manifest.streams, true)
   shape(t, manifest)
   t.end()
