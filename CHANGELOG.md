@@ -1,8 +1,19 @@
 # Changelog
 
+## [4.0.0] - 2022-01-02
+
+### Removed
+
+- **Breaking:** drop Node.js 10 ([`ad1c533`](https://github.com/Level/supports/commit/ad1c533)) (Vincent Weevers)
+- Remove unused properties ([`c894eba`](https://github.com/Level/supports/commit/c894eba)) (Vincent Weevers).
+
+### Fixed
+
+- Align docs with `abstract-level` ([`c894eba`](https://github.com/Level/supports/commit/c894eba)) (Vincent Weevers).
+
 ## [3.0.0] - 2021-11-07
 
-_No longer compatible with `abstract-leveldown` or its dependents._
+_No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 
 ### Changed
 
@@ -57,6 +68,8 @@ _No longer compatible with `abstract-leveldown` or its dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[4.0.0]: https://github.com/Level/supports/releases/tag/v4.0.0
 
 [3.0.0]: https://github.com/Level/supports/releases/tag/v3.0.0
 
