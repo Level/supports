@@ -1,6 +1,6 @@
 {
   "name": "level-supports",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Create a manifest describing the abilities of an abstract-level database",
   "license": "MIT",
   "scripts": {

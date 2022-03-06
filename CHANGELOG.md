@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1] - 2022-03-06
+
+### Fixed
+
+- Update support matrix ([`c30998f`](https://github.com/Level/supports/commit/c30998f)) (Vincent Weevers)
+- Align LICENSE with SPDX ([`1bb9f9c`](https://github.com/Level/supports/commit/1bb9f9c)) (Vincent Weevers)
+
 ## [4.0.0] - 2022-01-02
 
 ### Removed
@@ -68,6 +75,8 @@ _No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[4.0.1]: https://github.com/Level/supports/releases/tag/v4.0.1
 
 [4.0.0]: https://github.com/Level/supports/releases/tag/v4.0.0
 
