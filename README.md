@@ -79,7 +79,7 @@ Must be `false` if any of the following is true:
 | :------------------- | :-------------------------- |
 | `classic-level`      | ✅                           |
 | `memory-level`       | ✅                           |
-| `browser-level`      | ✅ (by buffering)            |
+| `browser-level`      | ❌                           |
 | `rocks-level`        | ✅                           |
 | `leveldown`          | ✅                           |
 | `rocksdb`            | ✅                           |
@@ -109,29 +109,28 @@ Do iterators support [`seek(..)`](https://github.com/Level/abstract-level/#itera
 <details>
 <summary>Support matrix</summary>
 
-| Module               | Support             |
-| :------------------- | :------------------ |
-| `abstract-level`     | ✅ 1.0.0             |
-| `classic-level`      | ✅ 1.0.0             |
-| `memory-level`       | ✅ 1.0.0             |
-| `browser-level`      | ❌                   |
-| `rocks-level`        | ✅ 1.0.0             |
-| `abstract-leveldown` | ✅ 6.0.0             |
-| `leveldown`          | ✅ 1.2.0             |
-| `rocksdb`            | ✅ 1.0.0             |
-| `memdown`            | ✅ 4.1.0             |
-| `level-js`           | ❌                   |
-| `encoding-down`      | ✅ 6.1.0             |
-| `deferred-leveldown` | ✅ 5.1.0             |
-| `levelup`            | ✅ n/a               |
-| `level-packager`     | ✅ n/a               |
-| `level@7`            | ❌ (`level-js`)      |
-| `level@8`            | ❌ (`browser-level`) |
-| `level-mem`          | ✅ 4.0.0             |
-| `level-rocksdb`      | ✅ 1.0.0             |
-| `subleveldown`       | ✅ 4.1.0             |
-| `multileveldown`     | ❌                   |
-| `level-party`        | ❌                   |
+| Module               | Support |
+| :------------------- | :------ |
+| `abstract-level`     | ✅ 1.0.0 |
+| `classic-level`      | ✅ 1.0.0 |
+| `memory-level`       | ✅ 1.0.0 |
+| `browser-level`      | ✅ 1.0.0 |
+| `rocks-level`        | ✅ 1.0.0 |
+| `abstract-leveldown` | ✅ 6.0.0 |
+| `leveldown`          | ✅ 1.2.0 |
+| `rocksdb`            | ✅ 1.0.0 |
+| `memdown`            | ✅ 4.1.0 |
+| `level-js`           | ❌       |
+| `encoding-down`      | ✅ 6.1.0 |
+| `deferred-leveldown` | ✅ 5.1.0 |
+| `levelup`            | ✅ n/a   |
+| `level-packager`     | ✅ n/a   |
+| `level`              | ✅ 8.0.0 |
+| `level-mem`          | ✅ 4.0.0 |
+| `level-rocksdb`      | ✅ 1.0.0 |
+| `subleveldown`       | ✅ 4.1.0 |
+| `multileveldown`     | ❌       |
+| `level-party`        | ❌       |
 
 </details>
 
@@ -178,6 +177,8 @@ const db = new Level()
 await db.put('key', 'value')
 ```
 
+Always true since `abstract-level@1`.
+
 ### `createIfMissing`, `errorIfExists` (boolean)
 
 Does `db.open()` support these options?
@@ -206,6 +207,8 @@ Do all database methods (that don't otherwise have a return value) support promi
 db.put('key', 'value', callback)
 await db.put('key', 'value')
 ```
+
+Always true since `abstract-level@1`.
 
 <details>
 <summary>Support matrix</summary>
@@ -340,27 +343,19 @@ Does the database support `db.getMany()`? Always true since `abstract-level@1`.
 
 ### `keyIterator` (boolean)
 
-Does the database have a `keys([options])` method that returns a key iterator? Also implies support of `iterator#mode`.
-
-_At the time of writing this is a new feature, subject to change, zero modules support it._
+Does the database have a `keys([options])` method that returns a key iterator? Always true since `abstract-level@1`.
 
 ### `valueIterator` (boolean)
 
-Does the database have a `values([options])` method that returns a key iterator? Also implies support of `iterator#mode`.
-
-_At the time of writing this is a new feature, subject to change, zero modules support it._
+Does the database have a `values([options])` method that returns a key iterator? Always true since `abstract-level@1`.
 
 ### `iteratorNextv` (boolean)
 
-Do iterators have a `nextv(size[, options][, callback])` method?
-
-_At the time of writing this is a new feature, subject to change, zero modules support it._
+Do iterators have a `nextv(size[, options][, callback])` method? Always true since `abstract-level@1`.
 
 ### `iteratorAll` (boolean)
 
-Do iterators have a `all([options][, callback])` method?
-
-_At the time of writing this is a new feature, subject to change, zero modules support it._
+Do iterators have a `all([options][, callback])` method? Always true since `abstract-level@1`.
 
 ### `additionalMethods` (object)
 

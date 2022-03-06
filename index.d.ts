@@ -43,32 +43,26 @@ export interface IManifest {
   getMany: boolean
 
   /**
-   * Does the database have a `keys([options])` method that returns a key iterator? Also
-   * implies support of `iterator#mode`.
-   *
-   * @experimental
+   * Does the database have a `keys([options])` method that returns a key iterator?
+   * Always true since `abstract-level@1`.
    */
   keyIterator: boolean
 
   /**
    * Does the database have a `values([options])` method that returns a key iterator?
-   * Also implies support of `iterator#mode`.
-   *
-   * @experimental
+   * Always true since `abstract-level@1`.
    */
   valueIterator: boolean
 
   /**
-   * Do iterators have a `nextv(size[, options][, callback])` method?
-   *
-   * @experimental
+   * Do iterators have a `nextv(size[, options][, callback])` method? Always true since
+   * `abstract-level@1`.
    */
   iteratorNextv: boolean
 
   /**
-   * Do iterators have a `all([options][, callback])` method?
-   *
-   * @experimental
+   * Do iterators have a `all([options][, callback])` method? Always true since
+   * `abstract-level@1`.
    */
   iteratorAll: boolean
 
@@ -96,6 +90,8 @@ export interface IManifest {
    * const db = new Level()
    * await db.put('key', 'value')
    * ```
+   *
+   * Always true since `abstract-level@1`.
    */
   deferredOpen: boolean
 
@@ -108,6 +104,8 @@ export interface IManifest {
    * db.put('key', 'value', callback)
    * await db.put('key', 'value')
    * ```
+   *
+   * Always true since `abstract-level@1`.
    */
   promises: boolean
 
