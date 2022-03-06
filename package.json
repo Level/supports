@@ -4,8 +4,8 @@
   "description": "Create a manifest describing the abilities of an abstract-level database",
   "license": "MIT",
   "scripts": {
-    "test": "ts-standard && tsc && standard && hallmark && (nyc -s node test/self.js | faucet) && nyc report",
-    "test-browsers-local": "airtap --coverage test/self.js",
+    "test": "standard && ts-standard *.ts && hallmark && (nyc -s node test/self.js | faucet) && nyc report",
+    "test-browsers-local": "airtap --coverage test/self.js && nyc report",
     "coverage": "nyc report -r lcovonly",
     "hallmark": "hallmark --fix"
   },
