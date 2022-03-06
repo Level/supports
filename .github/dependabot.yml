@@ -4,6 +4,9 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    ignore:
+      - dependency-name: standard
+      - dependency-name: hallmark
   - package-ecosystem: github-actions
     directory: /
     schedule:
