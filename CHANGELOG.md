@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.0] - 2022-11-09
+
+### Changed
+
+- **Breaking:** remove properties that were already true since `abstract-level@1` ([`43ba6b7`](https://github.com/Level/supports/commit/43ba6b7)) (Vincent Weevers)
+- Use promise API of `db.open()` and `close()` in tests ([`f2ad373`](https://github.com/Level/supports/commit/f2ad373)) (Vincent Weevers)
+
 ## [4.0.1] - 2022-03-06
 
 ### Fixed
@@ -75,6 +82,8 @@ _No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[5.0.0]: https://github.com/Level/supports/releases/tag/v5.0.0
 
 [4.0.1]: https://github.com/Level/supports/releases/tag/v4.0.1
 
