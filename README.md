@@ -134,40 +134,6 @@ Do iterators support [`seek(..)`](https://github.com/Level/abstract-level/#itera
 
 </details>
 
-#### `clear` (boolean)
-
-Does the database support `db.clear()`? Always true since `abstract-level@1`.
-
-<details>
-<summary>Support matrix</summary>
-
-See also [Level/community#79](https://github.com/Level/community/issues/79).
-
-| Module                          | Support | Optimized |
-| :------------------------------ | :------ | :-------- |
-| `abstract-level` and dependents | ✅ 1.0.0 | ✅ 1.0.0   |
-| `abstract-leveldown`            | ✅ 6.1.0 | n/a       |
-| `leveldown`                     | ✅ 5.2.0 | ✅ 6.0.3   |
-| `rocksdb`                       | ✅ 4.1.0 | ✅ 5.2.0   |
-| `memdown`                       | ✅ 5.0.0 | ✅ 6.1.1   |
-| `level-js`                      | ✅ 5.0.0 | ✅ 5.0.0   |
-| `encoding-down`                 | ✅ 6.2.0 | n/a       |
-| `deferred-leveldown`            | ✅ 5.2.0 | n/a       |
-| `levelup`                       | ✅ 4.2.0 | n/a       |
-| `level-packager`                | ✅ 5.0.3 | n/a       |
-| `level`                         | ✅ 6.0.0 | ✅ 7.0.1   |
-| `level-mem`                     | ✅ 5.0.1 | ✅ 6.0.1   |
-| `level-rocksdb`                 | ✅ 5.0.0 | ✅ 5.0.0   |
-| `subleveldown`                  | ✅ 4.2.1 | ✅ 4.2.1   |
-| `multileveldown`                | ✅ 5.0.0 | ✅ 5.0.0   |
-| `level-party`                   | ✅ 5.1.0 | ✅ 5.1.0   |
-
-</details>
-
-### `status` (boolean)
-
-Does the database have a [`status`](https://github.com/Level/abstract-level/#dbstatus) property? Always true since `abstract-level@1`.
-
 ### `deferredOpen` (boolean)
 
 Can operations like `db.put()` be called without explicitly opening the db? Like so:
@@ -196,35 +162,6 @@ Does `db.open()` support these options?
 | `rocksdb`       | ✅       |
 | `memdown`       | ❌       |
 | `level-js`      | ❌       |
-
-</details>
-
-### `promises` (boolean)
-
-Do all database methods (that don't otherwise have a return value) support promises, in addition to callbacks? Such that, when a callback argument is omitted, a promise is returned:
-
-```js
-db.put('key', 'value', callback)
-await db.put('key', 'value')
-```
-
-Always true since `abstract-level@1`.
-
-<details>
-<summary>Support matrix</summary>
-
-| Module                              | Support              |
-| :---------------------------------- | :------------------- |
-| `abstract-level` and dependents     | ✅                    |
-| `abstract-leveldown` and dependents | ❌ (except iterators) |
-| `levelup`                           | ✅                    |
-| `level-packager`                    | ✅                    |
-| `level`                             | ✅                    |
-| `level-mem`                         | ✅                    |
-| `level-rocksdb`                     | ✅                    |
-| `subleveldown`                      | ✅                    |
-| `multileveldown`                    | ✅                    |
-| `level-party`                       | ✅                    |
 
 </details>
 
@@ -313,49 +250,6 @@ _This matrix lists which encodings are supported as indicated by e.g. `db.suppor
 </small>
 
 </details>
-
-### `getMany` (boolean)
-
-Does the database support `db.getMany()`? Always true since `abstract-level@1`.
-
-<details>
-<summary>Support matrix</summary>
-
-| Module                          | Support |
-| :------------------------------ | :------ |
-| `abstract-level` and dependents | ✅ 1.0.0 |
-| `abstract-leveldown`            | ✅ 7.2.0 |
-| `leveldown`                     | ✅ 6.1.0 |
-| `rocksdb`                       | ✅ 5.2.0 |
-| `memdown`                       | ✅       |
-| `level-js`                      | ✅ 6.1.0 |
-| `encoding-down`                 | ✅ 7.1.0 |
-| `deferred-leveldown`            | ✅ 7.0.0 |
-| `levelup`                       | ✅ 5.1.0 |
-| `level`                         | ✅ 7.0.1 |
-| `level-mem`                     | ✅ 6.0.1 |
-| `level-rocksdb`                 | ✅ 5.0.0 |
-| `subleveldown`                  | ✅ 6.0.0 |
-| `multileveldown`                | ✅ 5.0.0 |
-| `level-party`                   | ✅ 5.1.0 |
-
-</details>
-
-### `keyIterator` (boolean)
-
-Does the database have a `keys([options])` method that returns a key iterator? Always true since `abstract-level@1`.
-
-### `valueIterator` (boolean)
-
-Does the database have a `values([options])` method that returns a key iterator? Always true since `abstract-level@1`.
-
-### `iteratorNextv` (boolean)
-
-Do iterators have a `nextv(size[, options][, callback])` method? Always true since `abstract-level@1`.
-
-### `iteratorAll` (boolean)
-
-Do iterators have a `all([options][, callback])` method? Always true since `abstract-level@1`.
 
 ### `additionalMethods` (object)
 

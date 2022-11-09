@@ -33,47 +33,6 @@ export interface IManifest {
   seek: boolean
 
   /**
-   * Does the database support `db.clear()`? Always true since `abstract-level@1`.
-   */
-  clear: boolean
-
-  /**
-   * Does the database support `db.getMany()`? Always true since `abstract-level@1`.
-   */
-  getMany: boolean
-
-  /**
-   * Does the database have a `keys([options])` method that returns a key iterator?
-   * Always true since `abstract-level@1`.
-   */
-  keyIterator: boolean
-
-  /**
-   * Does the database have a `values([options])` method that returns a key iterator?
-   * Always true since `abstract-level@1`.
-   */
-  valueIterator: boolean
-
-  /**
-   * Do iterators have a `nextv(size[, options][, callback])` method? Always true since
-   * `abstract-level@1`.
-   */
-  iteratorNextv: boolean
-
-  /**
-   * Do iterators have a `all([options][, callback])` method? Always true since
-   * `abstract-level@1`.
-   */
-  iteratorAll: boolean
-
-  /**
-   * Does the database have a
-   * [`status`](https://github.com/Level/abstract-level/#dbstatus) property? Always true
-   * since `abstract-level@1`.
-   */
-  status: boolean
-
-  /**
    * Does `db.open()` and the database constructor support this option?
    */
   createIfMissing: boolean
@@ -94,20 +53,6 @@ export interface IManifest {
    * Always true since `abstract-level@1`.
    */
   deferredOpen: boolean
-
-  /**
-   * Do all database methods (that don't otherwise have a return value) support promises,
-   * in addition to callbacks? Such that, when a callback argument is omitted, a promise
-   * is returned:
-   *
-   * ```js
-   * db.put('key', 'value', callback)
-   * await db.put('key', 'value')
-   * ```
-   *
-   * Always true since `abstract-level@1`.
-   */
-  promises: boolean
 
   /**
    * Does database have the methods `createReadStream`, `createKeyStream` and
