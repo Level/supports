@@ -103,4 +103,20 @@ export interface IManifest {
    * ```
    */
   additionalMethods: Record<string, boolean>
+
+  /**
+   * Which methods or method groups take a `signal` option? At the time of writing there
+   * is only one method group: `iterators`. This includes `db.iterator()`, `db.keys()` and
+   * `db.values()`. For example:
+   *
+   * ```js
+   * if (db.supports.signals.iterators) {
+   *   const ac = new AbortController()
+   *   const iterator = db.keys({ signal: ac.signal })
+   *
+   *   ac.abort()
+   * }
+   * ```
+   */
+  signals: Record<string, boolean>
 }
