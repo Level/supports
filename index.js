@@ -13,6 +13,7 @@ exports.supports = function supports (...manifests) {
     streams: manifest.streams || false,
     encodings: Object.assign({}, manifest.encodings),
     events: Object.assign({}, manifest.events),
-    additionalMethods: Object.assign({}, manifest.additionalMethods)
+    additionalMethods: Object.assign({}, manifest.additionalMethods),
+    signals: Object.assign({}, manifest.signals)
   })
 }

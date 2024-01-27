@@ -272,6 +272,19 @@ if (db.supports.additionalMethods.foo) {
 
 For future extensibility, the properties of `additionalMethods` should be taken as truthy rather than strictly typed booleans. We may add additional metadata (see [#1](https://github.com/Level/supports/issues/1)).
 
+### `signals` (object)
+
+Which methods or method groups take a `signal` option? At the time of writing there is only one method group: `iterators`. This includes `db.iterator()`, `db.keys()` and `db.values()`. For example:
+
+```js
+if (db.supports.signals.iterators) {
+  const ac = new AbortController()
+  const iterator = db.keys({ signal: ac.signal })
+
+  ac.abort()
+}
+```
+
 ## Install
 
 With [npm](https://npmjs.org) do:
