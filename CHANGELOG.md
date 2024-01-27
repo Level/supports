@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.0.0] - 2024-01-27
+
+### Added
+
+- Add `signals` ([#22](https://github.com/Level/supports/issues/22)) ([`74b1706`](https://github.com/Level/supports/commit/74b1706)) (Vincent Weevers).
+
+### Removed
+
+- **Breaking:** drop Node.js < 16 ([`4e86afa`](https://github.com/Level/supports/commit/4e86afa)) (Vincent Weevers).
+
 ## [5.0.0] - 2022-11-09
 
 ### Changed
@@ -82,6 +92,8 @@ _No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[6.0.0]: https://github.com/Level/supports/releases/tag/v6.0.0
 
 [5.0.0]: https://github.com/Level/supports/releases/tag/v5.0.0
 
