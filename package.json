@@ -24,7 +24,7 @@
     "hallmark": "^4.0.0",
     "nyc": "^15.1.0",
     "standard": "^17.0.0",
-    "tap-arc": "^0.3.5",
+    "tap-arc": "^1.2.2",
     "tape": "^5.4.0"
   },
   "repository": {
