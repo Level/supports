@@ -5,7 +5,7 @@
 [![level badge][level-badge]](https://github.com/Level/awesome)
 [![npm](https://img.shields.io/npm/v/level-supports.svg)](https://www.npmjs.com/package/level-supports)
 [![Node version](https://img.shields.io/node/v/level-supports.svg)](https://www.npmjs.com/package/level-supports)
-[![Test](https://img.shields.io/github/actions/workflow/status/Level/supports/test.yml?branch=main&label=test)](https://github.com/Level/level/actions/workflows/test.yml)
+[![Test](https://img.shields.io/github/actions/workflow/status/Level/supports/test.yml?branch=main\&label=test)](https://github.com/Level/level/actions/workflows/test.yml)
 [![Coverage](https://img.shields.io/codecov/c/github/Level/supports?label=\&logo=codecov\&logoColor=fff)](https://codecov.io/gh/Level/supports)
 [![Standard](https://img.shields.io/badge/standard-informational?logo=javascript\&logoColor=fff)](https://standardjs.com)
 [![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
@@ -75,26 +75,14 @@ Aliased as `snapshots` for backwards compatibility.
 <details>
 <summary>Support matrix</summary>
 
-| Module               | Implicit snapshots            |
-| :------------------- | :---------------------------- |
-| `classic-level`      | ✅                           |
-| `memory-level`       | ✅                           |
-| `browser-level`      | ❌                           |
-| `rocks-level`        | ✅                           |
-| `leveldown`          | ✅                           |
-| `rocksdb`            | ✅                           |
-| `memdown`            | ✅                           |
-| `level-js`           | ✅ (by buffering)            |
-| `encoding-down`      | ✅                           |
-| `deferred-leveldown` | ✅                           |
-| `levelup`            | ✅                           |
-| `level-packager`     | ✅                           |
-| `level`              | ✅                           |
-| `level-mem`          | ✅                           |
-| `level-rocksdb`      | ✅                           |
-| `subleveldown`       | ✅                           |
-| `multileveldown`     | ✅ (unless `retry` is true)  |
-| `level-party`        | ❌ (unless `retry` is false) |
+| Module          | Implicit snapshots          |
+| :-------------- | :-------------------------- |
+| `classic-level` | ✅                           |
+| `memory-level`  | ✅                           |
+| `browser-level` | ❌                           |
+| `level`         | ✅                           |
+| `many-level`    | ✅ (unless `retry` is true)  |
+| `rave-level`    | ❌ (unless `retry` is false) |
 
 </details>
 
@@ -105,18 +93,18 @@ Does the database implement `db.snapshot()` and do read methods accept a `snapsh
 <details>
 <summary>Support matrix</summary>
 
-| Module               | Explicit snapshots          |
-| :------------------- | :-------------------------- |
-| `classic-level`      | Not yet                     |
-| `memory-level`       | Not yet                     |
-| `browser-level`      | ❌                          |
-| `rave-level`         | TBD                         |
+| Module          | Explicit snapshots |
+| :-------------- | :----------------- |
+| `classic-level` | Not yet            |
+| `memory-level`  | Not yet            |
+| `browser-level` | ❌                  |
+| `rave-level`    | TBD                |
 
 </details>
 
 ### `permanence` (boolean)
 
-Does data survive after process (or environment) exit? Typically true. False for [`memory-level`](https://github.com/Level/memory-level) and [`memdown`](https://github.com/Level/memdown).
+Does data survive after process (or environment) exit? Typically true. False for [`memory-level`](https://github.com/Level/memory-level).
 
 ### `seek` (boolean)
 
@@ -125,28 +113,15 @@ Do iterators support [`seek(..)`](https://github.com/Level/abstract-level/#itera
 <details>
 <summary>Support matrix</summary>
 
-| Module               | Support |
-| :------------------- | :------ |
-| `abstract-level`     | ✅ 1.0.0 |
-| `classic-level`      | ✅ 1.0.0 |
-| `memory-level`       | ✅ 1.0.0 |
-| `browser-level`      | ✅ 1.0.0 |
-| `rocks-level`        | ✅ 1.0.0 |
-| `abstract-leveldown` | ✅ 6.0.0 |
-| `leveldown`          | ✅ 1.2.0 |
-| `rocksdb`            | ✅ 1.0.0 |
-| `memdown`            | ✅ 4.1.0 |
-| `level-js`           | ❌       |
-| `encoding-down`      | ✅ 6.1.0 |
-| `deferred-leveldown` | ✅ 5.1.0 |
-| `levelup`            | ✅ n/a   |
-| `level-packager`     | ✅ n/a   |
-| `level`              | ✅ 8.0.0 |
-| `level-mem`          | ✅ 4.0.0 |
-| `level-rocksdb`      | ✅ 1.0.0 |
-| `subleveldown`       | ✅ 4.1.0 |
-| `multileveldown`     | ❌       |
-| `level-party`        | ❌       |
+| Module           | Support |
+| :--------------- | :------ |
+| `abstract-level` | ✅ 1.0.0 |
+| `classic-level`  | ✅ 1.0.0 |
+| `memory-level`   | ✅ 1.0.0 |
+| `browser-level`  | ✅ 1.0.0 |
+| `level`          | ✅ 8.0.0 |
+| `many-level`     | ✅ 1.0.0 |
+| `rave-level`     | ✅ 1.0.0 |
 
 </details>
 
@@ -171,13 +146,8 @@ Does `db.open()` support these options?
 | Module          | Support |
 | :-------------- | :------ |
 | `classic-level` | ✅       |
-| `rocks-level`   | ✅       |
 | `memory-level`  | ❌       |
 | `browser-level` | ❌       |
-| `leveldown`     | ✅       |
-| `rocksdb`       | ✅       |
-| `memdown`       | ❌       |
-| `level-js`      | ❌       |
 
 </details>
 
@@ -193,25 +163,7 @@ if (db.supports.events.put) {
 
 ### `streams` (boolean)
 
-Does database have the methods `createReadStream`, `createKeyStream` and `createValueStream`, following the API documented in `levelup`? For `abstract-level` databases, a standalone module called [`level-read-stream`](https://github.com/Level/read-stream) is available.
-
-<details>
-<summary>Support matrix</summary>
-
-| Module                              | Support |
-| :---------------------------------- | :------ |
-| `abstract-level` and dependents     | ❌       |
-| `abstract-leveldown` and dependents | ❌       |
-| `levelup`                           | ✅       |
-| `level-packager`                    | ✅       |
-| `level`                             | ✅       |
-| `level-mem`                         | ✅       |
-| `level-rocksdb`                     | ✅       |
-| `subleveldown`                      | ✅       |
-| `multileveldown`                    | ✅       |
-| `level-party`                       | ✅       |
-
-</details>
+Does database have the methods `createReadStream`, `createKeyStream` and `createValueStream`, following the API documented in the legacy `levelup` module? Always false since the introduction of `abstract-level` which moved streams to a standalone module called [`level-read-stream`](https://github.com/Level/read-stream).
 
 ### `encodings` (object)
 
@@ -224,27 +176,6 @@ Which encodings (by name) does the database support, as indicated by nested prop
 As the `encodings` property cannot be false (anymore, since `level-supports` v3.0.0) it implies that the database supports `keyEncoding` and `valueEncoding` options on all relevant methods, uses a default encoding of utf8 and that hence all of its read operations return strings rather than buffers by default.
 
 <details>
-<summary>Support matrix (general support)</summary>
-
-_This matrix just indicates general support of encodings as a feature, not that the listed modules support the `encodings` property exactly as described above, which only works on `abstract-level` databases._
-
-| Module                                 | Support |
-| :------------------------------------- | :------ |
-| `abstract-level` (and dependents)      | ✅       |
-| `abstract-leveldown`  (and dependents) | ❌       |
-| `encoding-down`                        | ✅       |
-| `levelup`                              | ✅       |
-| `level-packager`                       | ✅       |
-| `level`                                | ✅       |
-| `level-mem`                            | ✅       |
-| `level-rocksdb`                        | ✅       |
-| `subleveldown`                         | ✅       |
-| `multileveldown`                       | ✅       |
-| `level-party`                          | ✅       |
-
-</details>
-
-<details>
 <summary>Support matrix (specific encodings)</summary>
 
 _This matrix lists which encodings are supported as indicated by e.g. `db.supports.encodings.utf8`. Encodings that encode to another (like how `'json'` encodes to `'utf8'`) are excluded here, though they are present in `db.supports.encodings`._
@@ -254,7 +185,6 @@ _This matrix lists which encodings are supported as indicated by e.g. `db.suppor
 | `classic-level` | ✅             | ✅             | ✅ <sup>1<sup> |
 | `memory-level`  | ✅ <sup>2<sup> | ✅ <sup>2<sup> | ✅ <sup>2<sup> |
 | `browser-level` | ✅ <sup>1<sup> | ✅ <sup>1<sup> | ✅             |
-| `rocks-level`   | ✅             | ✅             | ✅ <sup>1<sup> |
 | `level@8`       | ✅ <sup>3<sup> | ✅ <sup>3<sup> | ✅ <sup>3<sup> |
 
 <small>
