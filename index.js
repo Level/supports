@@ -3,8 +3,14 @@
 exports.supports = function supports (...manifests) {
   const manifest = manifests.reduce((acc, m) => Object.assign(acc, m), {})
 
+  // Snapshots is an alias for backwards compatibility
+  const implicitSnapshots = manifest.implicitSnapshots || manifest.snapshots || false
+  const explicitSnapshots = manifest.explicitSnapshots || false
+
   return Object.assign(manifest, {
-    snapshots: manifest.snapshots || false,
+    implicitSnapshots,
+    explicitSnapshots,
+    snapshots: implicitSnapshots,
     permanence: manifest.permanence || false,
     seek: manifest.seek || false,
     createIfMissing: manifest.createIfMissing || false,
