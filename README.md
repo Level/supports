@@ -41,42 +41,42 @@ Given zero or more manifest objects, returns a merged and enriched manifest obje
 For future extensibility, the properties are truthy rather than strictly typed booleans. Falsy or absent properties are converted to `false`, other values are allowed:
 
 ```js
-supports().snapshots // false
-supports({ snapshots: true }).snapshots // true
-supports({ snapshots: {} }).snapshots // {}
-supports({ snapshots: 1 }, { snapshots: 2 }).snapshots // 2
+supports().seek // false
+supports({ seek: true }).seek // true
+supports({ seek: {} }).seek // {}
+supports({ seek: 1 }, { seek: 2 }).seek // 2
 ```
 
 For consumers of the manifest this means they should check support like so:
 
 ```js
-if (db.supports.snapshots)
+if (db.supports.seek)
 ```
 
 Rather than:
 
 ```js
-if (db.supports.snapshots === true)
+if (db.supports.seek === true)
 ```
 
 **Note:** the manifest describes high-level features that typically encompass multiple methods of a db. It is currently not a goal to describe a full API, or versions of it.
 
 ## Features
 
-### `snapshots` (boolean)
+### `implicitSnapshots` (boolean)
 
-Does the database have snapshot guarantees? Meaning that reads are unaffected by simultaneous writes. For example, an iterator should read from a snapshot of the database, created at the time `db.iterator()` was called. This means the iterator will not see the data of simultaneous write operations.
-
-Must be `false` if any of the following is true:
+Does the database read from a snapshot as described in [`abstract-level`](https://github.com/Level/abstract-level#reading-from-snapshots)? Must be `false` if any of the following is true:
 
 - Reads don't operate on a snapshot
 - Snapshots are created asynchronously.
 
+Aliased as `snapshots` for backwards compatibility.
+
 <details>
 <summary>Support matrix</summary>
 
-| Module               | Snapshot guarantee          |
-| :------------------- | :-------------------------- |
+| Module               | Implicit snapshots            |
+| :------------------- | :---------------------------- |
 | `classic-level`      | ✅                           |
 | `memory-level`       | ✅                           |
 | `browser-level`      | ❌                           |
@@ -95,6 +95,22 @@ Must be `false` if any of the following is true:
 | `subleveldown`       | ✅                           |
 | `multileveldown`     | ✅ (unless `retry` is true)  |
 | `level-party`        | ❌ (unless `retry` is false) |
+
+</details>
+
+### `explicitSnapshots` (boolean)
+
+Does the database implement `db.snapshot()` and do read methods accept a `snapshot` option as described in [`abstract-level`](https://github.com/Level/abstract-level#reading-from-snapshots)?
+
+<details>
+<summary>Support matrix</summary>
+
+| Module               | Explicit snapshots          |
+| :------------------- | :-------------------------- |
+| `classic-level`      | Not yet                     |
+| `memory-level`       | Not yet                     |
+| `browser-level`      | ❌                          |
+| `rave-level`         | TBD                         |
 
 </details>
 
