@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [16, 18, 20]
+        # TODO (next major): officially drop node 16
+        node: [18, 20, 22]
     name: Node ${{ matrix.node }}
     steps:
       - name: Checkout
@@ -17,12 +18,12 @@ jobs:
       - name: Install
         run: npm install
       - name: Install Playwright
-        if: matrix.node == 16
+        if: matrix.node == 18
         run: npx playwright install --with-deps
       - name: Test
         run: npm test
       - name: Test browsers
-        if: matrix.node == 16
+        if: matrix.node == 18
         run: npm run test-browsers-local
       - name: Coverage
         run: npm run coverage
