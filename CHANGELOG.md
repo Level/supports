@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.0] - 2024-12-23
+
+### Added
+
+- Add `implicit-` and `explicitSnapshots` ([`61f15ae`](https://github.com/Level/supports/commit/61f15ae)) (Vincent Weevers)
+
 ## [6.0.0] - 2024-01-27
 
 ### Added
@@ -92,6 +98,8 @@ _No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[6.1.0]: https://github.com/Level/supports/releases/tag/v6.1.0
 
 [6.0.0]: https://github.com/Level/supports/releases/tag/v6.0.0
 
