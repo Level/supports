@@ -7,17 +7,27 @@
 export function supports (...manifests: Array<Partial<IManifest>>): IManifest
 
 /**
- * Describes the abilities of an
+ * Describes the capabilities of an
  * [`abstract-level`](https://github.com/Level/abstract-level) database. Support matrices
  * for known `abstract-level` implementations can be found in
  * [`level-supports`](https://github.com/Level/supports#features).
  */
 export interface IManifest {
   /**
-   * Does the database have snapshot guarantees? Meaning that reads are unaffected by
-   * simultaneous writes. For example, an iterator should read from a snapshot of the
-   * database, created at the time `db.iterator()` was called. This means the iterator
-   * will not see the data of simultaneous write operations.
+   * Does the database read from a snapshot as described in
+   * [`abstract-level`](https://github.com/Level/abstract-level#reading-from-snapshots)?
+   */
+  implicitSnapshots: boolean
+
+  /**
+   * Does the database implement `db.snapshot()` and do read methods accept a `snapshot`
+   * option as described in
+   * [`abstract-level`](https://github.com/Level/abstract-level#reading-from-snapshots)?
+   */
+  explicitSnapshots: boolean
+
+  /**
+   * Alias of {@link implicitSnapshots} for backwards compatibility.
    */
   snapshots: boolean
 
