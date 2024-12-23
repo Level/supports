@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.1] - 2024-12-23
+
+### Fixed
+
+- Fix typings for snapshots ([`b235a3d`](https://github.com/Level/supports/commit/b235a3d)) (Vincent Weevers)
+
 ## [6.1.0] - 2024-12-23
 
 ### Added
@@ -98,6 +104,8 @@ _No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[6.1.1]: https://github.com/Level/supports/releases/tag/v6.1.1
 
 [6.1.0]: https://github.com/Level/supports/releases/tag/v6.1.0
 
