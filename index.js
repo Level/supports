@@ -11,6 +11,7 @@ exports.supports = function supports (...manifests) {
     implicitSnapshots,
     explicitSnapshots,
     snapshots: implicitSnapshots,
+    has: manifest.has || false,
     permanence: manifest.permanence || false,
     seek: manifest.seek || false,
     createIfMissing: manifest.createIfMissing || false,
