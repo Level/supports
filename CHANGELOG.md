@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.2.0] - 2024-12-27
+
+### Added
+
+- Add `has` property ([#33](https://github.com/Level/supports/issues/33)) ([`f644190`](https://github.com/Level/supports/commit/f644190)) (Vincent Weevers)
+
 ## [6.1.1] - 2024-12-23
 
 ### Fixed
@@ -104,6 +110,8 @@ _No longer compatible with `abstract-leveldown`, `levelup` or their dependents._
 ## [1.0.0] - 2019-09-22
 
 :seedling: Initial release.
+
+[6.2.0]: https://github.com/Level/supports/releases/tag/v6.2.0
 
 [6.1.1]: https://github.com/Level/supports/releases/tag/v6.1.1
 
