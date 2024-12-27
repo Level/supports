@@ -32,6 +32,11 @@ export interface IManifest {
   snapshots: boolean
 
   /**
+   * Does the database implement `has()` and `hasMany()`?
+   */
+  has: boolean
+
+  /**
    * Does data survive after process (or environment) exit?
    */
   permanence: boolean

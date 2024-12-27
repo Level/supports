@@ -98,7 +98,25 @@ Does the database implement `db.snapshot()` and do read methods accept a `snapsh
 | `classic-level` | Not yet            |
 | `memory-level`  | Not yet            |
 | `browser-level` | ❌                  |
+| `many-level`    | TBD                |
 | `rave-level`    | TBD                |
+
+</details>
+
+### `has` (boolean)
+
+Does the database implement `has()` and `hasMany()`? Tracked in [Level/community#142](https://github.com/Level/community/issues/142).
+
+<details>
+<summary>Support matrix</summary>
+
+| Module          | Has     |
+| :-------------- | :------ |
+| `classic-level` | Not yet |
+| `memory-level`  | Not yet |
+| `browser-level` | Not yet |
+| `many-level`    | Not yet |
+| `rave-level`    | Not yet |
 
 </details>
 
